@@ -1,0 +1,35 @@
+{
+	"AWSEBDockerrunVersion": 2,
+	"containerDefinitions": [
+		{
+			"name": "client",
+			"iamge": "novperez/multi-client",
+			"hostname": "client",
+			"essential": false
+		},
+		{
+                        "name": "server",
+                        "iamge": "novperez/multi-server",
+                        "hostname": "api",
+                        "essential": false
+                },
+		{
+                        "name": "worker",
+                        "iamge": "novperez/multi-worker",
+                        "hostname": "worker",
+                        "essential": false
+                },
+		{
+                        "name": "nginx",
+                        "iamge": "novperez/multi-nginx",
+                        "essential": true,
+			"portMappings": [
+				{
+					"hostPort": 80,
+					"containerPort": 80
+				}
+			],
+			"links": ["client", "server"]
+                }
+	]
+}
