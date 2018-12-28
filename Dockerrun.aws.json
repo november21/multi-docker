@@ -3,28 +3,28 @@
 	"containerDefinitions": [
 		{
 			"name": "client",
-			"iamge": "novperez/multi-client",
+			"image": "novperez/multi-client",
 			"hostname": "client",
 			"essential": false,
 			"memory": 128
 		},
 		{
                         "name": "server",
-                        "iamge": "novperez/multi-server",
+                        "image": "novperez/multi-server",
                         "hostname": "api",
                         "essential": false,
 			"memory": 128
                 },
 		{
                         "name": "worker",
-                        "iamge": "novperez/multi-worker",
+                        "image": "novperez/multi-worker",
                         "hostname": "worker",
                         "essential": false,
 			"memory": 128
                 },
 		{
                         "name": "nginx",
-                        "iamge": "novperez/multi-nginx",
+                        "image": "novperez/multi-nginx",
                         "essential": true,
 			"portMappings": [
 				{
